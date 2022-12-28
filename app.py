@@ -27,7 +27,7 @@ while True:
     num += 1
 
 df = pd.DataFrame(bike_dict)
-st.write("# 따릉이 시각화 결과")
+st.write("# 따릉이 실시간 데이터 확인")
 st.write(df)
 
 #pydeck모듈로 시각화
@@ -45,3 +45,4 @@ initial_view = pdk.ViewState(latitude=lat_center, longitude=lon_center, zoom = 1
 map = pdk.Deck(layers=[layer], initial_view_state=initial_view,
                tooltip={"text":"대여소 : {stationName}\n현재 주차 대수 : {parkingBikeTotCnt}"})
 st.pydeck_chart(map)
+
